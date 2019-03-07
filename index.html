@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"content="This is the most recent version of Sally Student's Resume. Written in React.">
+  <meta name="keyword"content="Sally, Student, resume, coding,coder,graduate,work, react">
+  <title>Sally Student React Resume</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="application-root"></div>
+
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin></script>
+<script type="text/babel">
+
+
+
+function Resume(props) {
+    console.log(props);
+    return(
+        
+        <div className='stage'>
+            <div className='header'>
+                <Nav className='nav'><h2>Sally Student</h2></Nav>
+            </div>
+            <div className='container'>
+                <Img className='bioPic'></Img>
+            </div>
+        </div>
+    );
+}
+
+function Nav(props) {
+    console.log(props);
+    return(
+        <div className='nav'>
+            <section>
+                <nav>
+                    <header>{props.children}</header> 
+                    <div className='navBar'>
+                        <div className='menuContent'>
+                            <div className='menuBtn educationContent' id='educationContent'>
+                                <a>Education</a>
+                                <p><br></br><b>Bloc University</b><br></br>
+                                Full Stack Web Development<br></br>
+                                Class of 2001 - <em>Magna Cum Laude</em></p>
+                                <p><b>Texas State University</b><br></br>
+                                BS Photographic Imaging<br></br>
+                                Class of 1996 - <em>Magna Cum Laude</em></p>
+                            </div>
+                            <div className='menuBtn workContent'>
+                                <a>Work Experience</a>
+                                <p><br></br><b>Shell Gas Station</b><br></br>
+                                <em>Night Clerk</em> - 1997 to 1999<br></br>
+                                Managed a truck stop service station durning the "graveyard" shift.
+                                </p>
+                                <p><br></br><b>Century 21</b><br></br>
+                                <em>Customer Service Representative</em> - 1999 to 2002<br></br>
+                                Worked with a team of 3 memebers to address any customer servicer related issues for a major department store.
+                                </p>
+                            </div>
+                            <div className='menuBtn bioContent'>
+                                <a>About Me</a>
+                                <p><br></br><br></br>My name is Sally Student and I like simple things.  Side note, I am awesome.</p>
+                                <p><b>Web Developer</b><br></br>HTML - CSS - JS - React - Node</p>
+                                
+                            </div>
+                        
+                            <div className='menuBtn contactContent'>
+                                <a>Contact Info</a>
+                                <p><br></br>+41(045)293 39 19</p>
+                                <address>
+                                <a id='emailLink' href='mailto:sally@student.com'>Email Me</a>
+                                </address>
+                            </div>
+                        </div>   
+                    </div>
+                </nav>
+            </section>
+        </div>
+    );
+}
+function Img(props) {
+    console.log(props);
+    return(
+        <div className='bioPic'>
+            <section>
+                <img src={`https://ia.media-imdb.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_UX214_CR0,0,214,317_AL_.jpg`}></img>
+            </section>   
+        </div>
+    );
+}
+ReactDOM.render(
+    <Resume className='container' id='app'></Resume>,
+    document.querySelector('#application-root'));
+
+
+</script>
+<script src="main.js"></script>
+</body>
+</html>
